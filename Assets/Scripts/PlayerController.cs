@@ -1,38 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime;
 using UnityEngine;
-
 public class PlayerController : MonoBehaviour
 {
-    public bool overworld; 
-
-    private void Start()
+    /*
+    // Movement variables
+    float xSpeed;
+    var xVector;
+    float xDirection;
+    Rigidbody2D rb;
+    void Start()
     {
-        GetComponentInChildren<TopDown_AnimatorController>().enabled = overworld;
-        GetComponentInChildren<Platformer_AnimatorController>().enabled = !overworld; //what do you think ! means?
+        xSpeed = 4;
+        xDirection = 0;
+        xVector = 0;
         
-        
-        if (overworld)
-        {
-            GetComponent<Rigidbody2D>().gravityScale = 0f;
-        }
-        else
-        {
-            GetComponent<Rigidbody2D>().gravityScale = 1;
-        }
-    }
-
-    private void Update()
-    {
+        // Get the Rigidbody2D component
+        rb = GetComponent<Rigidbody2D>();
         
     }
-    
-    //for organization, put other built-in Unity functions here
-    
-    
-    
-    
-    
-    //after all Unity functions, your own functions can go here
+    void Update()
+    {
+        xDirection = Input.GetAxis("Horizontal");
+        xVector = xSpeed * xDirection;
+        rb.AddForce(xVector, 0);
+    }
+    void FixedUpdate()
+    {
+        
+    }
+    */
 }
