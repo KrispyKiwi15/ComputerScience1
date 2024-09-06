@@ -1,31 +1,42 @@
 using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
-    /*
+
     // Movement variables
-    float xSpeed;
-    var xVector;
+    public bool overworld;
+    public float xSpeed;
+    public float ySpeed;
+    float xVector;
     float xDirection;
-    Rigidbody2D rb;
+    float yDirection;
+    float yVector;
+    
     void Start()
     {
-        xSpeed = 4;
+        GetComponentInChildren<TopDown_AnimatorController>().enabled = overworld;
+        GetComponentInChildren<Platformer_AnimatorController>().enabled = !overworld;
         xDirection = 0;
+        yDirection = 0;
         xVector = 0;
-        
-        // Get the Rigidbody2D component
-        rb = GetComponent<Rigidbody2D>();
+        yVector = 0;
+                
         
     }
     void Update()
     {
+        if (overworld)
+        {
+            yVector = ySpeed * yDirection;
+            yDirection = Input.GetAxis("Vertical");
+        }
+
         xDirection = Input.GetAxis("Horizontal");
         xVector = xSpeed * xDirection;
-        rb.AddForce(xVector, 0);
+        transform.Translate(xVector * Time.deltaTime, yVector * Time.deltaTime, 0);
     }
     void FixedUpdate()
     {
         
     }
-    */
+    
 }
