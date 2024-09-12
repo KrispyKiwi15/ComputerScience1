@@ -39903,6 +39903,16 @@ PrefabInstance:
       propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5774960653562304022, guid: bc139d8bb8dee439490b05712200dfee,
+        type: 3}
+      propertyPath: xSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774960653562304022, guid: bc139d8bb8dee439490b05712200dfee,
+        type: 3}
+      propertyPath: ySpeed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7819348094328437333, guid: bc139d8bb8dee439490b05712200dfee,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -4,12 +4,13 @@ public class PlayerController : MonoBehaviour
 
     // Movement variables
     public bool overworld;
-    public float xSpeed;
-    public float ySpeed;
+    public float xSpeed = 4;
+    public float ySpeed = 4;
     float xVector;
     float xDirection;
     float yDirection;
     float yVector;
+    public int Coins;
     
     void Start()
     {
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
         yDirection = 0;
         xVector = 0;
         yVector = 0;
+        Coins = 0;
                 
         
     }
@@ -33,10 +35,25 @@ public class PlayerController : MonoBehaviour
         xDirection = Input.GetAxis("Horizontal");
         xVector = xSpeed * xDirection;
         transform.Translate(xVector * Time.deltaTime, yVector * Time.deltaTime, 0);
+        
     }
     void FixedUpdate()
     {
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Coin") ){
+            Coins += 1;
+            print("You have " + Coins + " coins");
+            Destroy(other.gameObject);
+        }
+        if (other.CompareTag("Collision"))
+        {
+            print("WALL");
+
+        }
     }
     
 }
