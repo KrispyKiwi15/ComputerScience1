@@ -10,8 +10,8 @@ public class PlayerController : MonoBehaviour
     float xDirection;
     float yDirection;
     float yVector;
-    public int Coins;
-    
+
+
     void Start()
     {
         GetComponentInChildren<TopDown_AnimatorController>().enabled = overworld;
@@ -20,9 +20,9 @@ public class PlayerController : MonoBehaviour
         yDirection = 0;
         xVector = 0;
         yVector = 0;
-        Coins = 0;
-                
         
+
+
     }
     void Update()
     {
@@ -41,19 +41,4 @@ public class PlayerController : MonoBehaviour
     {
         
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Coin") ){
-            Coins += 1;
-            print("You have " + Coins + " coins");
-            Destroy(other.gameObject);
-        }
-        if (other.CompareTag("Collision"))
-        {
-            print("WALL");
-
-        }
-    }
-    
 }
