@@ -254,3 +254,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   overworld: 1
+  xSpeed: 0
+  ySpeed: 0

@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     float xDirection;
     float yDirection;
     float yVector;
-
+    private double grav;
 
     void Start()
     {
@@ -20,9 +20,9 @@ public class PlayerController : MonoBehaviour
         yDirection = 0;
         xVector = 0;
         yVector = 0;
-        
 
 
+        grav = 0.3;
     }
     void Update()
     {
@@ -32,6 +32,11 @@ public class PlayerController : MonoBehaviour
             yDirection = Input.GetAxis("Vertical");
         }
 
+        if (!overworld)
+        {
+            //make jumping
+        }
+        
         xDirection = Input.GetAxis("Horizontal");
         xVector = xSpeed * xDirection;
         transform.Translate(xVector * Time.deltaTime, yVector * Time.deltaTime, 0);
