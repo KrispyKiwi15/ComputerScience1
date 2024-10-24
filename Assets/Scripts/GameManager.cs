@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour
     {
         print("You Died");
         SceneManager.LoadScene(0);
+        health = 10;
     }
 
     public void AddCoins()

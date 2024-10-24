@@ -15,13 +15,16 @@ public class Health : MonoBehaviour
         gm = FindFirstObjectByType<GameManager>();
     }
 
-    void OnCollisionEnter2D(Collision2D other)
+    void OnCollisionStay2D(Collision2D other)
     {
-        
+
         if (other.gameObject.CompareTag("Spikes"))
         {
             gm.ChangeHealth(-2);
-            
+        }
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            gm.ChangeHealth(-2);
         }
     } 
 }

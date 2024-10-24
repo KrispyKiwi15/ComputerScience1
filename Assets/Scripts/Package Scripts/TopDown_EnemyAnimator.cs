@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class TopDown_EnemyAnimator : MonoBehaviour
 {
-    public bool IsAttacking { get; private set; }
+    public bool IsAttacking { get; set; }
 
     Vector3 prevPos;
-    Animator anim;
+    [SerializeField] Animator anim;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        anim = GetComponent<Animator>();
-    }
+
 
     // Update is called once per frame
     void FixedUpdate()
@@ -45,12 +42,10 @@ public class TopDown_EnemyAnimator : MonoBehaviour
 
         prevPos = transform.position;
 
-        if (Input.GetMouseButton(0))
-        {
-            Attack();
-        }
+        
 
         IsAttacking = anim.GetCurrentAnimatorStateInfo(0).IsTag("Attack");
+
     }
 
     // Call this function from another script for the orc to attack!
